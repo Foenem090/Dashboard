@@ -75,13 +75,13 @@ export function TabsExample() {
         {/* Content Box */}
         <div className="mt-4 pt-4 border-t border-slate-700/60 min-h-[180px]">
           <TabPanels>
-            <TabPanel className="space-y-3 text-sm leading-relaxed text-slate-200 font-normal">
+            <TabPanel className="space-y-3 text-lg md:text-sm leading-relaxed text-slate-200 font-normal">
               <p className="bg-slate-900/60 p-3 rounded-lg border border-slate-700/50 text-slate-200">{typedContent[0]}</p>
               {typedContent[1] && (
                 <p className="bg-slate-900/60 p-3 rounded-lg border border-slate-700/50 text-slate-200">{typedContent[1]}</p>
               )}
             </TabPanel>
-            <TabPanel className="space-y-3 text-sm leading-relaxed text-slate-200 font-normal">
+            <TabPanel className="space-y-3 text-lg md:text-sm leading-relaxed text-slate-200 font-normal">
               <p className="bg-slate-900/60 p-3 rounded-lg border border-slate-800">{typedContent[0]}</p>
               {typedContent[1] && (
                 <p className="bg-slate-900/60 p-3 rounded-lg border border-slate-800">{typedContent[1]}</p>

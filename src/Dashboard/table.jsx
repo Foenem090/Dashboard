@@ -55,7 +55,7 @@ const data = [
 
  function TableHero() {
   return (
-    <div className="w-full bg-slate-800/90 p-4 sm:p-6 rounded-xl border border-slate-700/80 shadow-md overflow-x-auto">
+    <div className="w-full bg-slate-800/90 text-xl md:text-sm p-4 sm:p-6 rounded-xl border border-slate-700/80 shadow-md overflow-x-auto">
       <Table className="w-full min-w-[600px]">
         <TableHead>
           <TableRow className="border-b border-slate-700/80">

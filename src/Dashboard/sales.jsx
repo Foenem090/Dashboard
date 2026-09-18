@@ -12,7 +12,6 @@ const holdings = [
 
 const dataFormatter = (number) => {
     return "$" + Intl.NumberFormat('us').format(number).toString()
-
 }
 
 function Sales() {
@@ -21,7 +20,7 @@ function Sales() {
   return (
     <>
     {/* outermost div */}
-    <Card className='rounded-xl max-w-full mx-auto bg-slate-800/90 border border-slate-700/80 shadow-md'>
+    <Card className='rounded-xl text-lg md:text-sm max-w-full mx-auto bg-slate-800/90 border border-slate-700/80 shadow-md'>
         {/* header */}
         <Flex className='space-x-8 flex-col sm:flex-row gap-4 sm:gap-0 justify-between items-start sm:items-center'>
             <div className="bg-blue-600/90 px-3 py-1 rounded-lg border border-blue-500/50 inline-block shadow-sm">
@@ -34,7 +33,7 @@ function Sales() {
             <TabGroup index={selectedIndex} onIndexChange={setSelectedIndex}>
 
                 {/* tablist */}
-                <TabList variant='solid' className="bg-slate-900/80 border border-slate-700/60 p-1 rounded-lg">
+                <TabList variant='solid' className="bg-slate-900/80 p-1 rounded-lg border border-slate-700/60">
 
                     {/* tab */}
                     <Tab 
@@ -62,14 +61,14 @@ function Sales() {
             </Text>
             <Text className='text-slate-400 text-sm mt-0.5'>1 Asset class - 5 Holdings</Text>
 
-            {/* selectd ind */}
+            {/* selected tab panel */}
             {selectedIndex === 0 ? (
               <DonutChart 
-                className='mt-6 h-52 text-white'
+                className='mt-6 h-56 text-slate-200 [&_.recharts-pie-sector]:opacity-90 [&_.recharts-pie-sector:hover]:opacity-100'
                 data={holdings} 
                 category="value" 
                 index="name" 
-                colors={["blue", "cyan", "indigo", "violet", "slate"]}
+               colors={["indigo", "violet", "cyan", "amber", "emerald"]}
                 valueFormatter={dataFormatter} 
               />
             ) : (

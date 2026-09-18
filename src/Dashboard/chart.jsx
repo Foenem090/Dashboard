@@ -12,24 +12,26 @@ const chartdata = [
   { date: "Aug 23", "2024": 72, "2025": 49 },
   { date: "Sep 23", "2024": 65, "2025": 52 },
   { date: "Oct 23", "2024": 68, "2025": 59 },
-  { date: "Nov 23", "2024": 74, "2025": null },
-  { date: "Dec 23", "2024": 71, "2025": null },
+  { date: "Nov 23", "2024": 74, "2025": 55 },
+  { date: "Dec 23", "2024": 71, "2025": 60 },
 ]
 
 export const Area = () => {
   const [value, setValue] = useState(null)
 
   return (
-    <div className="w-full bg-slate-800/90 border border-slate-700/80 rounded-xl p-4 shadow-md">
+    <div className="w-full text-lg md:text-[17px] bg-slate-800/90 border border-slate-700/80 rounded-xl p-4 shadow-md">
+
       <AreaChart
-        className="mt-4 h-72 text-slate-300"
-        data={chartdata}
-        index="date"
-        categories={["2024", "2025"]}
-        colors={["slate", "blue"]}
-        yAxisWidth={30}
+          className="h-72"
+            data={chartdata}
+            index="date"
+            categories={["2024", "2025"]}
+            colors={["red", "blue"]}
+            yAxisWidth={30}
         onValueChange={(v) => setValue(v)}
       />
+
     </div>
   )
 }
