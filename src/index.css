@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@source "../node_modules/@tremor/react";
+
+*{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #1e293b;
+}
