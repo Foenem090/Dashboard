@@ -1,25 +1,25 @@
 import React from 'react'
 import Carditems from './carditems'
-import  Area  from './chart'
+import Area from './chart'
 import TableHero from './table'
 
 const Left = () => {
   return (
     <>
     {/* outermost div */}
-    <div className='w-full flex flex-col justify-between p-2'>
+    <div className='w-full flex flex-col justify-between p-2 space-y-6'>
         {/* cards */}
-        <div className='flex flex-col lg:flex-row gap-2 w-full sm:w-[800px]'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full'>
           <Carditems/>
           <Carditems/>
           <Carditems/>
         </div>
         {/* chart */}
-        <div className='flex-auto w-full mt-8 bg-white rounded-lg pb-4 '>
+        <div className='w-full rounded-xl'>
             <Area/>
         </div>
         {/* table */}
-        <div className='flex-auto w-full rounded-lg mt-8'>
+        <div className='w-full rounded-xl'>
             <TableHero/>
         </div>
     </div>

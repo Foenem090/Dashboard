@@ -21,11 +21,11 @@ function Sales() {
   return (
     <>
     {/* outermost div */}
-    <Card className='rounded-lg max-w-full mx-auto bg-white'>
+    <Card className='rounded-xl max-w-full mx-auto bg-slate-800/90 border border-slate-700/80 shadow-md'>
         {/* header */}
-        <Flex className='space-x-8 flex-col lg:flex-row gap-25'>
-            <div className="bg-blue-900 px-3 py-1 rounded-lg border border-slate-200 inline-block">
-                <Title className="font-bold text-white text-2xl">
+        <Flex className='space-x-8 flex-col sm:flex-row gap-4 sm:gap-0 justify-between items-start sm:items-center'>
+            <div className="bg-blue-600/90 px-3 py-1 rounded-lg border border-blue-500/50 inline-block shadow-sm">
+                <Title className="font-bold text-white text-xl">
                     Overview
                 </Title>
             </div>
@@ -34,17 +34,17 @@ function Sales() {
             <TabGroup index={selectedIndex} onIndexChange={setSelectedIndex}>
 
                 {/* tablist */}
-                <TabList variant='solid'>
+                <TabList variant='solid' className="bg-slate-900/80 border border-slate-700/60 p-1 rounded-lg">
 
                     {/* tab */}
                     <Tab 
                         icon={ChartBarIcon} 
-                        className="rounded-lg text-black flex items-center font-medium data-[selected]:bg-blue-900 data-[selected]:text-white hover:text-slate-900 transition-all cursor-pointer">
+                        className="rounded-md text-slate-300 flex items-center font-medium data-[selected]:bg-blue-600 data-[selected]:text-white hover:text-white transition-all cursor-pointer">
                         Chart
                     </Tab>
                     <Tab 
                         icon={ListBulletIcon} 
-                        className="rounded-lg text-black flex items-center font-medium data-[selected]:bg-blue-900 data-[selected]:text-white hover:text-slate-900 transition-all cursor-pointer">
+                        className="rounded-md text-slate-300 flex items-center font-medium data-[selected]:bg-blue-600 data-[selected]:text-white hover:text-white transition-all cursor-pointer">
                         List
                     </Tab>
                 </TabList>
@@ -52,44 +52,45 @@ function Sales() {
         </Flex>
 
         {/* textarea */}
-            <Text className='mt-8'>Holdings</Text>
-            <Metric>$54,677</Metric>
-            <Divider></Divider>
+            <Text className='mt-6 text-slate-400 font-medium'>Holdings</Text>
+            <Metric className='text-white font-bold text-2xl mt-1'>$54,677</Metric>
+            <Divider className='border-slate-700/60 my-4'></Divider>
 
             {/* asset */}
-            <Text>
-                <Bold>Asset Allocation</Bold>
+            <Text className='text-slate-200'>
+                <Bold className='text-white'>Asset Allocation</Bold>
             </Text>
-            <Text>1 Asset class - 5 Holdings</Text>
+            <Text className='text-slate-400 text-sm mt-0.5'>1 Asset class - 5 Holdings</Text>
 
             {/* selectd ind */}
             {selectedIndex === 0 ? (
               <DonutChart 
-                className='mt-8'
+                className='mt-6 h-52 text-white'
                 data={holdings} 
                 category="value" 
                 index="name" 
+                colors={["blue", "cyan", "indigo", "violet", "slate"]}
                 valueFormatter={dataFormatter} 
               />
             ) : (
            <>
            {/* flexed header */}
-           <Flex className='mt-8' justifyContent='between'>
-            <Text className='truncate'>
-                <Bold>Holdings</Bold>
+           <Flex className='mt-6' justifyContent='between'>
+            <Text className='truncate text-slate-300'>
+                <Bold className='text-slate-200'>Holdings</Bold>
             </Text>
-            <Text>Since Transaction</Text>
+            <Text className='text-slate-400 text-sm'>Since Transaction</Text>
            </Flex>
 
            {/* list */}
-          <List className="mt-4">
+          <List className="mt-2 divide-slate-700/50">
             {holdings.map((holding) => (
-                <ListItem key={holding.name}>
-                    <Text>{holding.name}</Text>
+                <ListItem key={holding.name} className="border-slate-700/50 py-2">
+                    <Text className="text-slate-300 font-medium">{holding.name}</Text>
 
                     {/* value */}
                     <Flex className='space-x-2' justifyContent='end'>
-                        <Text>
+                        <Text className="text-slate-100 font-semibold">
                             $ {Intl.NumberFormat('us').format(holding.value).toString()}
                         </Text>
                     </Flex>
@@ -98,16 +99,16 @@ function Sales() {
             </List>
            </>)}
 
-           {/* button */}
-           <Flex className='mt-6 pt-4 border-t'>
+            {/* button */}
+            <Flex className='mt-6 pt-3 border-t border-slate-700/60'>
             <Button size='xs'
              variant='light' 
-             className='text-blue-800'
+             className='text-blue-400 hover:text-blue-300 p-0 font-medium transition-colors'
              icon={ArrowRightIcon}
              iconPosition='right'>
                 View more
             </Button>
-           </Flex>
+            </Flex>
     </Card>
     </>
   )

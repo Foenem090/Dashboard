@@ -42,7 +42,7 @@ function useTypewriter(textArray, activeIndex) {
           clearInterval(interval)
         }
       }
-    }, 50)
+    }, 20)
 
     return () => clearInterval(interval)
   }, [activeIndex])
@@ -56,35 +56,35 @@ export function TabsExample() {
 
   return (
     /* Surface Elevation Container: Creates clear division from background */
-    <div className="max-w-xl rounded-xl bg-slate-800/90 border border-slate-700/60 p-5 shadow-xl backdrop-blur-sm">
+    <div className="w-full max-w-full rounded-xl bg-slate-800/90 border border-slate-700/80 p-4 sm:p-5 shadow-md backdrop-blur-sm">
       <TabGroup index={selectedIndex} onIndexChange={setSelectedIndex}>
         
         {/* Tab Bar Track with prominent contrasting pill */}
         <TabList 
           variant="solid" 
-          className="bg-slate-950/60 p-1.5 rounded-lg border border-slate-700/50 inline-flex"
+          className="bg-slate-900/80 p-1 rounded-lg border border-slate-700/60 flex w-full sm:w-auto"
         >
-          <Tab className="rounded-md text-[15px] font-semibold px-4 py-1.5 text-slate-400 transition-all data-[selected]:bg-slate-700 data-[selected]:text-white data-[selected]:shadow-md data-[selected]:ring-1 data-[selected]:ring-slate-600 hover:text-slate-200">
+          <Tab className="flex-1 sm:flex-initial rounded-md text-sm sm:text-[15px] font-semibold px-4 py-1.5 text-slate-300 transition-all data-[selected]:bg-blue-600 data-[selected]:text-white data-[selected]:shadow-sm hover:text-white cursor-pointer">
             Returns
           </Tab>
-          <Tab className="rounded-md text-[15px] font-semibold px-4 py-1.5 text-slate-400 transition-all data-[selected]:bg-slate-700 data-[selected]:text-white data-[selected]:shadow-md data-[selected]:ring-1 data-[selected]:ring-slate-600 hover:text-slate-200">
+          <Tab className="flex-1 sm:flex-initial rounded-md text-sm sm:text-[15px] font-semibold px-4 py-1.5 text-slate-300 transition-all data-[selected]:bg-blue-600 data-[selected]:text-white data-[selected]:shadow-md hover:text-white cursor-pointer">
             Shipping
           </Tab>
         </TabList>
 
         {/* Content Box */}
-        <div className="mt-5 pt-4 border-t border-slate-700/50 min-h-[160px]">
+        <div className="mt-4 pt-4 border-t border-slate-700/60 min-h-[180px]">
           <TabPanels>
             <TabPanel className="space-y-3 text-sm leading-relaxed text-slate-200 font-normal">
-              <p className="bg-slate-900/40 p-3 rounded-lg border border-slate-800">{typedContent[0]}</p>
+              <p className="bg-slate-900/60 p-3 rounded-lg border border-slate-700/50 text-slate-200">{typedContent[0]}</p>
               {typedContent[1] && (
-                <p className="bg-slate-900/40 p-3 rounded-lg border border-slate-800">{typedContent[1]}</p>
+                <p className="bg-slate-900/60 p-3 rounded-lg border border-slate-700/50 text-slate-200">{typedContent[1]}</p>
               )}
             </TabPanel>
             <TabPanel className="space-y-3 text-sm leading-relaxed text-slate-200 font-normal">
-              <p className="bg-slate-900/40 p-3 rounded-lg border border-slate-800">{typedContent[0]}</p>
+              <p className="bg-slate-900/60 p-3 rounded-lg border border-slate-800">{typedContent[0]}</p>
               {typedContent[1] && (
-                <p className="bg-slate-900/40 p-3 rounded-lg border border-slate-800">{typedContent[1]}</p>
+                <p className="bg-slate-900/60 p-3 rounded-lg border border-slate-800">{typedContent[1]}</p>
               )}
             </TabPanel>
           </TabPanels>

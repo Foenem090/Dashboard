@@ -20,9 +20,9 @@ export const Area = () => {
   const [value, setValue] = useState(null)
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-slate-800/90 border border-slate-700/80 rounded-xl p-4 shadow-md">
       <AreaChart
-        className="mt-4 h-72"
+        className="mt-4 h-72 text-slate-300"
         data={chartdata}
         index="date"
         categories={["2024", "2025"]}

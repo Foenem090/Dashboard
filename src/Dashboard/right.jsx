@@ -7,16 +7,18 @@ const Right = () => {
   return (
     <>
     {/* outermost div */}
-    <div className='w-full p-2'>
-      <Sales/>
-    </div>
+    <div className='w-full flex flex-col gap-6 p-2'>
+      <div className='w-full'>
+        <Sales/>
+      </div>
 
-    <div className='w-full p-2'>
-      <Analytics/>
-    </div>
+      <div className='w-full'>
+        <Analytics/>
+      </div>
 
-    <div className='w-full p-2'>
-      <TabsExample/>
+      <div className='w-full'>
+        <TabsExample/>
+      </div>
     </div>
     </>
   )
